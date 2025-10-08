@@ -1,0 +1,48 @@
+appId: com.vivacomsolutions.pihr.client 
+---
+- waitForAnimationToEnd:
+    timeout: 1600
+- runFlow:
+    when:
+      visible: "In Time\n09:00 hr(s)"
+    commands:
+       - assertVisible: "Break Time"
+       - tapOn: "Break Time"
+       - assertVisible: "Remarks*"
+       - tapOn: "Type remarks"
+       - inputText: "Going for a short break" 
+       - hideKeyboard
+       - tapOn: "Start Break"
+       - assertVisible: "Failed!"
+       - tapOn: 
+          point: "77%,34%"
+       - hideKeyboard
+       - tapOn:
+           point: "91%,36%"
+- runFlow:
+    when:
+      notVisible: "In Time\n09:00 hr(s)"
+    commands:
+       - assertVisible: "Break Time"
+       - tapOn: "Break Time"
+       - assertVisible: "Start Break"
+       - tapOn: "Type remarks"
+       - inputText: "Going for a short break" 
+       - hideKeyboard
+       - tapOn: "Start Break"
+       - assertVisible: "End Break"
+       - tapOn: "Type remarks"
+       - inputText: "Ending breaktime"
+       - hideKeyboard
+       - tapOn: "End Break"
+       - assertVisible: "Modules"
+     
+
+        
+      
+    
+        
+       
+
+
+

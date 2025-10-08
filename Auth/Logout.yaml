@@ -1,0 +1,20 @@
+appId: com.vivacomsolutions.pihr.client
+---
+- runFlow:
+    when:
+      visible: "Summary"
+    commands:
+      - tapOn:
+          point: "9%,10%"
+      - tapOn: "Log out"
+      - assertVisible: "Login"
+- runFlow:
+    when:
+      visible: "Login"
+    commands:
+      - evalScript: console.log("You are logged out from piHR")
+- runFlow:
+    when:
+      visible: "Go To Login"
+    commands:
+      - evalScript: console.log("You are logged out from piHR")

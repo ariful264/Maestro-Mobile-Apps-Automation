@@ -1,0 +1,17 @@
+{
+    "type": "module",
+    "dependencies": {
+      "fs": "^0.0.1-security",
+      "js-yaml": "^4.1.0",
+      "xml2js": "^0.6.2",
+      "allure-commandline": "^2.24.1",
+      "allure-js-commons": "^2.15.1"
+    },
+    "scripts": {
+      "allure:generate": "allure generate allure-results --clean -o allure-report",
+      "allure:open": "allure open allure-report",
+      "allure:serve": "allure serve allure-results",
+      "test:allure": "bash runAllureTest.sh"
+    }
+  }
+  

@@ -1,0 +1,29 @@
+appId: com.vivacomsolutions.pihr.client  
+---
+- runFlow:
+    when:
+      visible: "Subdomain Type subdomain"
+    commands:
+      - tapOn: "Subdomain Type subdomain"
+      - eraseText
+      - inputText: "viva"
+      - back
+      - scroll
+      - tapOn: "Go To Login"
+- runFlow:
+    when:
+      visible: "Login"
+    commands:
+      - tapOn: "Username"
+      - eraseText
+      - inputText: "labib"
+      - tapOn: "Password"
+      - eraseText
+      - inputText: "$p1hr*Mast3r*pAs5#"
+      - tapOn: "Go To Dashboard"
+      - assertVisible: "Summary"
+- runFlow:
+    when:
+      visible: "Summary"
+    commands:
+      - evalScript: console.log("You are logged in piHR")

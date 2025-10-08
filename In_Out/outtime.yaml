@@ -1,0 +1,24 @@
+appId: com.vivacomsolutions.pihr.client  
+---
+- waitForAnimationToEnd:
+    timeout: 16000
+- runFlow:
+    when:
+      visible: "In Time\n09:00 hr(s)"
+    commands:
+      - assertVisible: "Out Time" 
+      - tapOn: "Out Time"
+      - assertVisible: "Submit"
+      - tapOn: "Submit"
+      - assertVisible: "Can not save Out time before In time.Please ensure your In time first."
+      - tapOn: "Cancel"
+      - assertVisible: "Summary"  
+- runFlow:
+    when:
+      notVisible: "In Time\n09:00 hr(s)"
+    commands:
+      - assertVisible: "Out Time"
+      - tapOn: "Out Time"
+      - assertVisible: "Submit"
+      - tapOn: "Submit"
+      - assertVisible: "Data updated successfully."

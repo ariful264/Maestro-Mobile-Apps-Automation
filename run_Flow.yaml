@@ -1,0 +1,11 @@
+appId: com.vivacomsolutions.pihr.client
+---
+- launchApp
+- runFlow: "Auth/Login.yaml"
+- runFlow: "In_Out/intime.yaml"
+- runFlow: "In_Out/outtime.yaml"
+- runFlow: "BreakTime/breaktime.yaml"
+- runFlow: "Task/task.yaml"
+- runFlow: "CheckInOut/checkinout.yaml"
+- runFlow: "Auth/Logout.yaml"
+
