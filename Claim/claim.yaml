@@ -1,0 +1,52 @@
+appId: com.vivacomsolutions.pihr.client  
+---
+- waitForAnimationToEnd:
+    timeout: 16000
+- runFlow: 
+    when:
+      notVisible: "Claim"
+    commands:
+      - launchApp
+- runFlow:
+    when: 
+      visible: "Claim"
+    commands:
+      - tapOn: "Claim"
+      - tapOn:
+          point: "88%,89%"
+      - assertVisible: "Create Claim"
+      - tapOn:
+          point: "50%,45%"
+      - tapOn: "OK"
+      - tapOn: "Select category"
+      - tapOn: "Advance"
+      - tapOn: "Claim Amount"
+      - inputText: "111"
+      - tapOn: "Select"
+      - tapOn: "OK"
+      - tapOn: "Select"
+      - tapOn: "OK"
+      - tapOn: "Enter description"
+      - inputText: "Claim appliction created by maestro"
+      - hideKeyboard
+      - tapOn: "Attach Your File
+
+        Maximum file size: 300 KB"
+      - waitForAnimationToEnd:
+         timeout: 5000
+      - tapOn: "Files"
+
+      - tapOn:
+          id: "com.google.android.go.documentsui:id/icon_mime_lg"
+          index: 1
+
+      - tapOn: "Add" 
+      
+      - assertVisible: "Description"
+      - scroll
+      - tapOn: "Submit"
+      - assertVisible: "My Claims"
+      - tapOn: "Back"
+
+
+      
