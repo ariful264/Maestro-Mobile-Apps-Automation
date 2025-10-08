@@ -1,0 +1,33 @@
+appId: com.vivacomsolutions.pihr.client  
+---
+- waitForAnimationToEnd:
+    timeout: 16000
+- runFlow: 
+    when:
+      notVisible: "Directory"
+    commands:
+      - launchApp
+- runFlow:
+    when:
+      visible: "Directory"
+    commands:
+      - tapOn: "Directory"
+      - assertVisible: "Employee Directory"
+      - tapOn:
+          point: "90%,8%"
+      - assertVisible: "Find Employees"
+      - tapOn: "Search by name or Code"
+      - inputText: "ariful"
+      - tapOn: "Md. Ariful islam Manik"
+      - assertVisible: "Profile"
+      - tapOn:
+         point: "50%,37%"
+      - tapOn:
+          point: "81%,37%"
+      - tapOn: "Back"
+      - assertVisible: "Find Employees"
+      - tapOn:
+         point: "86%,18%"
+      - tapOn: "Back"
+      - assertVisible: "Directory"
+

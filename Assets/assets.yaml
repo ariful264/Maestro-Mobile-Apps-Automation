@@ -1,0 +1,36 @@
+appId: com.vivacomsolutions.pihr.client  
+---
+- waitForAnimationToEnd:
+    timeout: 16000
+- runFlow: 
+    when:
+      notVisible: "Assets"
+    commands:
+      - launchApp
+- runFlow:
+    when:
+      visible: "Assets"
+    commands:
+      - tapOn: "Assets"
+      - assertVisible: "Assigned"
+      - tapOn: "Requested"     
+      - tapOn:
+          point: "88%,89%" 
+      - assertVisible: "Asset Request"
+      - tapOn: "Select"
+      - tapOn: "OK"
+      - tapOn: "OK"
+      - tapOn: "Select"
+      - tapOn: "OK"
+      - tapOn: "OK"
+      - tapOn: "Select Asset Category"
+      - tapOn: "Office Accessories"
+      - tapOn: "Requisition"
+      - inputText: "Need a new mobile for testing."
+      - hideKeyboard
+      - tapOn: "Submit"
+      - assertVisible: "Requested"
+      - tapOn: "Requisition"
+      - tapOn: "Back"
+      - assertVisible: "Assets"
+

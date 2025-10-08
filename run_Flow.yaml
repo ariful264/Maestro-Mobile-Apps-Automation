@@ -7,5 +7,9 @@ appId: com.vivacomsolutions.pihr.client
 - runFlow: "BreakTime/breaktime.yaml"
 - runFlow: "Task/task.yaml"
 - runFlow: "CheckInOut/checkinout.yaml"
+- runFlow: "Claim/claim.yaml "
+- runFlow: "Directory/directory.yaml"
+- runFlow: "Assets/assets.yaml"
 - runFlow: "Auth/Logout.yaml"
+
 
