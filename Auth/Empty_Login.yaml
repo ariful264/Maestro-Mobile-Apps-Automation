@@ -1,0 +1,36 @@
+appId: com.vivacomsolutions.pihr.client  
+---
+- runFlow:
+    when:
+      visible: "Summary"
+    commands:
+      - runFlow: "Logout.yaml"
+      - assertVisible: "Go To Dashboard"
+      - tapOn: "Username"
+      - eraseText
+      - tapOn: "Password"
+      - eraseText
+      - tapOn: "Go To Dashboard"
+      - assertVisible: "Enter your username"
+      - assertVisible: "Enter your password"
+
+
+- runFlow:
+    when:
+      notVisible: "Summary"
+    commands:
+      - launchApp
+      - tapOn: "Subdomain Type subdomain"
+      - eraseText
+      - inputText: "viva"
+      - back
+      - scroll
+      - tapOn: "Go To Login"
+      - tapOn: "Username"
+      - eraseText
+      - tapOn: "Password"
+      - eraseText
+      - tapOn: "Go To Dashboard"
+      - assertVisible: "Enter your username"
+      - assertVisible: "Enter your password"
+

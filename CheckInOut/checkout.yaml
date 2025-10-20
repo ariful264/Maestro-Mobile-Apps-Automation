@@ -1,0 +1,34 @@
+appId: com.vivacomsolutions.pihr.client
+---
+- runFlow: 
+    when:
+      notVisible: "Check In/Out"
+    commands:
+      - launchApp
+- runFlow:
+    when:
+      visible: "Check in/out"
+    commands:
+      - tapOn: "Check In/Out"
+      - assertVisible: "Completed"
+      - tapOn:
+          point: "90%,35%"
+      - assertVisible: "Check Out"
+      - tapOn: "Capture Photo"
+      - tapOn:
+         point: "50%,89%"
+      - waitForAnimationToEnd: 
+            timeout: 5000
+      - tapOn:
+          point: "74%,90%"
+      - tapOn: "Remarks"
+      - inputText: "Check out is done"
+      - hideKeyboard
+      - tapOn: "Check Out"
+      - assertVisible: "Checkout added successfully."
+      - tapOn:
+          point: "77%,36%"
+      - assertVisible: "Check In/Out"
+      - tapOn: "Completed"
+      - tapOn: "Back"
+      - assertVisible: "Home"

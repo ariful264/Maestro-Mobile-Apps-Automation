@@ -1,0 +1,27 @@
+appId: com.vivacomsolutions.pihr.client
+---
+- runFlow:
+    when:
+      visible: "Summary"
+    commands:  
+      - runFlow: "Logout.yaml"
+      - assertVisible: "Go To Dashboard"
+      - back
+      - assertVisible: "Go To Login"
+      - tapOn: "Subdomain Type subdomain"
+      - eraseText
+      - inputText: "ABCDFF"
+      - back
+      - tapOn: "Go To Login"
+      - assertVisible: "Subdomain you have entered is not found!"
+- runFlow:
+    when:
+        notVisible: "Summary"
+    commands:
+      - launchApp
+      - tapOn: "Subdomain Type subdomain"
+      - eraseText
+      - inputText: "123456"
+      - back
+      - tapOn: "Go To Login"
+      - assertVisible: "Subdomain you have entered is not found!"
