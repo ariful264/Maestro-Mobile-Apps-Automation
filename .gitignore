@@ -50,3 +50,6 @@ coverage/
 dist/
 build/
 out/
+results
+scoop
+scoopappsallurecurrentbin

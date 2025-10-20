@@ -1,0 +1,24 @@
+appId: com.vivacomsolutions.pihr.client
+---
+- runFlow:
+    when:
+      notVisible: "Claim"
+    commands:
+      - launchApp
+
+- runFlow:
+    when:
+      visible: "Claim"
+    commands:
+      - tapOn: "Claim"
+      - waitForAnimationToEnd:
+          timeout: 5000
+      - tapOn:
+          point: "88%,23%"
+      - tapOn:
+          point: "57%,29%"
+      - assertVisible: "Delete"
+      - tapOn: "Delete"
+      - assertVisible: "Data deleted successfully."
+     
+      - back

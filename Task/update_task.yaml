@@ -1,0 +1,26 @@
+appId: com.vivacomsolutions.pihr.client
+---
+- runFlow:
+    when:
+      notVisible: "Task"
+    commands:
+      - launchApp
+- runFlow:
+    when:
+      visible: "Task"
+    commands:
+      - tapOn: "Task"
+      - tapOn: "All"
+      - tapOn: "Pending"
+      - tapOn:
+          point: "89%,23%"
+      - tapOn:
+          point: "50%,26%"
+      - assertVisible: "Update Task"
+      - tapOn: "Pending"
+      - tapOn: "Completed"
+      - scroll
+      - scroll
+      - tapOn: "Save Task"
+      - assertVisible: "Task updated successfully."
+      - tapOn: "Back"

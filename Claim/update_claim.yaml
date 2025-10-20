@@ -1,0 +1,27 @@
+appId: com.vivacomsolutions.pihr.client
+---
+- runFlow:
+    when:
+      notVisible: "Claim"
+    commands:
+      - launchApp
+      - waitForAnimationToEnd:
+          timeout: 160000
+- runFlow:
+    when:
+      visible: "Claim"
+    commands:
+      - tapOn: "Claim"
+      - tapOn:
+          point: "88%,23%"
+      - tapOn:
+          point: "43%,29%"
+      - tapOn: "Enter description"
+      - inputText: "update descriptions"
+      - back
+      - scroll
+      - assertVisible: "Update"
+      - tapOn: Update
+      - assertVisible: "Claim updated successfully."
+      - evalScript: console.log("Claim updated successfully")
+      - back

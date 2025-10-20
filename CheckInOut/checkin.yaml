@@ -1,0 +1,36 @@
+appId: com.vivacomsolutions.pihr.client
+---
+- runFlow:
+    when:
+      notVisible: "Home\nTab 1 of 5"
+    commands:
+      - launchApp
+- runFlow:
+    when:
+      visible: "Check In/Out"
+    commands: 
+      - tapOn: "Check In/Out"
+      - assertVisible: "Check In/Out"
+      - assertVisible: "Check Ins"
+      - tapOn:
+          point: 89%,89%
+      - assertVisible: "Add Check In"
+      - tapOn: "Company"
+      - inputText: "Vivasoft"
+      - tapOn: "Capture Photo"
+      - tapOn:
+         point: "50%,89%"
+      - waitForAnimationToEnd:
+            timeout: 5000
+      - tapOn:
+          point: "74%,90%"     
+      - tapOn: "Remarks"
+      - inputText: "Check in tested by masestro"
+      - assertVisible: "Add"
+      - tapOn: "Add"
+      - assertVisible: "Check In added successfully."
+      - tapOn:
+          point: 75%,35%
+      - evalScript: console.log("Success -> check in submitted")
+      - back
+

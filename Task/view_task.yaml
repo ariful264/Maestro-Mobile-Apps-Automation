@@ -1,0 +1,51 @@
+appId: com.vivacomsolutions.pihr.client
+---
+- runFlow:
+    when:
+      notVisible: "Task"
+    commands:
+      - launchApp
+- runFlow:
+    when:
+      visible: "Task"
+    commands:
+      - tapOn: "Task"
+      - tapOn: "All"
+      - tapOn: "Pending"
+      - tapOn:
+          point: 50%,26%
+      - assertVisible: "Task Details"
+      - assertVisible: "Creator"
+      - assertVisible: "End Date"
+      - assertVisible: "Assigned to"
+      - assertVisible: "Task Status"
+      - assertVisible: "Pending"
+      - assertVisible: "Description"
+      - assertVisible: "Activity"
+      - tapOn: "Back"
+      - tapOn: "In Progress"
+      - tapOn:
+          point: 50%,26%
+      - assertVisible: "Task Details"
+      - assertVisible: "Creator"
+      - assertVisible: "End Date"
+      - assertVisible: "Assigned to"
+      - assertVisible: "Task Status"
+      - assertVisible: "In Progress"
+      - assertVisible: "Description"
+      - assertVisible: "Activity"
+      - tapOn: "Back"
+      - tapOn: "Completed"
+      - tapOn:
+          point: 50%,26%
+      - assertVisible: "Task Details"
+      - assertVisible: "Creator"
+      - assertVisible: "End Date"
+      - assertVisible: "Assigned to"
+      - assertVisible: "Task Status"
+      - assertVisible: "Completed"
+      - assertVisible: "Description"
+      - assertVisible: "Activity"
+      
+      - tapOn: "Back"
+      - tapOn: "Back"

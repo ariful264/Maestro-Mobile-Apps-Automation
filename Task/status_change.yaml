@@ -1,0 +1,38 @@
+appId: com.vivacomsolutions.pihr.client
+---
+- waitForAnimationToEnd:
+    timeout: 16000
+- runFlow:
+    when:
+        notVisible: "Task"
+    commands:
+      - launchApp 
+- runFlow: 
+    when:
+      visible: "Task"
+    commands:
+    - tapOn: "Task"
+
+    - assertVisible: "All"
+    - tapOn: "Pending"
+  
+    - tapOn:
+       point: "50%,26%"
+    # - swipe:
+    #       start: "42%,35%"
+    #       end: "50%,53%"
+    #       duration: 10000
+
+    - tapOn: "Check In"
+    # - assertVisible: "Sorry. You are outside the range." 
+    - waitForAnimationToEnd:
+          timeout: 5000
+    - scroll
+    - tapOn: "Write your comment"
+    - inputText: "Hi, Will be a little more time for complete the Task."
+    - hideKeyboard
+    - tapOn:
+       point: "84%,89%"
+    - tapOn: "Back"
+    - tapOn: "Back"
+

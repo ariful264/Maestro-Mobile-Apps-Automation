@@ -1,15 +1,28 @@
+
+
 appId: com.vivacomsolutions.pihr.client
 ---
 - launchApp
-- runFlow: "Auth/Login.yaml"
+- runFlow: "Auth/Login.yaml" 
 - runFlow: "In_Out/intime.yaml"
 - runFlow: "In_Out/outtime.yaml"
 - runFlow: "BreakTime/breaktime.yaml"
-- runFlow: "Task/task.yaml"
-- runFlow: "CheckInOut/checkinout.yaml"
-- runFlow: "Claim/claim.yaml "
+- runFlow: "Task/new_task.yaml"
+- runFlow: "Task/status_change.yaml"
+- runFlow: "Task/view_task.yaml"
+- runFlow: "Task/update_task.yaml" 
+- runFlow: "CheckInOut/checkin.yaml"
+- runFlow: "CheckInOut/checkout.yaml"
+- runFlow: "Claim/new_claim.yaml"
+- runFlow: "Claim/update_claim.yaml"
+- runFlow: "Claim/view_claim.yaml"
+- runFlow: "Claim/delete_claim.yaml" 
 - runFlow: "Directory/directory.yaml"
 - runFlow: "Assets/assets.yaml"
 - runFlow: "Auth/Logout.yaml"
+
+
+
+
 
 

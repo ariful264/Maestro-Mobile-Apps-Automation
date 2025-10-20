@@ -1,0 +1,22 @@
+appId: com.vivacomsolutions.pihr.client
+---
+- runFlow:
+    when:
+      notVisible: "Claim"
+    commands:
+      - launchApp
+      - waitForAnimationToEnd:
+          timeout: 160000
+- runFlow:
+    when:
+      visible: "Claim"
+    commands:
+      - tapOn: "Claim"
+      - tapOn:
+          point: "50%,29%"
+      - assertVisible: "Claim Details"
+      - assertVisible: "Claim Summary"
+      - assertVisible: "Category Wise Claim Info"
+      - assertVisible: "Approval History"
+      - back
+      - back
