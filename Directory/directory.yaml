@@ -1,7 +1,7 @@
 appId: com.vivacomsolutions.pihr.client  
 ---
-- waitForAnimationToEnd:
-    timeout: 16000
+# - waitForAnimationToEnd:
+#     timeout: 16000
 - runFlow: 
     when:
       notVisible: "Directory"

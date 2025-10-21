@@ -92,6 +92,10 @@ EOF
 # Test flows to execute
 flows=(
   "open_app.yaml"
+  "Auth/Empty_Subdomain.yaml"
+  "Auth/Invalid_Subdomain.yaml"
+  "Auth/Empty_Login.yaml"
+  "Auth/Invalid_Login.yaml"
   "Auth/Login.yaml"
   "In_Out/intime.yaml"
   "In_Out/outtime.yaml"
