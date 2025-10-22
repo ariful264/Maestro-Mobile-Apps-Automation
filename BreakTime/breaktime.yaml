@@ -1,7 +1,7 @@
 appId: com.vivacomsolutions.pihr.client 
 ---
-- waitForAnimationToEnd:
-    timeout: 1600
+# - waitForAnimationToEnd:
+#     timeout: 1600
 - runFlow:
     when:
       visible: "In Time\n09:00 hr(s)"
