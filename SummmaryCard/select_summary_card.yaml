@@ -1,0 +1,33 @@
+# Percentage have to change coz useing testing device imran's
+
+
+appId: com.vivacomsolutions.pihr.client
+---
+
+- runFlow:
+    when:
+      notVisible: "Summary"
+    commands:
+      - launchApp
+      - waitForAnimationToEnd:
+         timeout: 10000
+- runFlow:
+    when:
+      visible: "No item selected."
+    commands: 
+        - tapOn:
+            point: "93%,26%"     
+        - assertVisible:
+            text: "More Summary items"
+        - tapOn: "Leave Spent"
+        - tapOn: "Visit Taken"
+        - tapOn: "Pending Approval"
+        - tapOn: "Missed Attendance"
+        - tapOn: "New Notices"
+        - tapOn: "Today's Check In"
+        - tapOn: "Today's Check Out"
+        - tapOn: "Monthly Claim Amount"
+        - tapOn: "Monthly Claim Disbursed"
+        - tapOn:
+            point: "92%,43%"
+        - assertVisible: "Summary"

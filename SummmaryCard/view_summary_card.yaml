@@ -1,0 +1,51 @@
+
+# Percentage have to change coz useing testing device imran's
+appId: com.vivacomsolutions.pihr.client
+---
+- launchApp
+- runFlow:
+    when:
+      notVisible: "No item selected."
+    commands:
+      - runFlow: "./select_summary_card.yaml"
+- runFlow:
+    when:
+      visible: "2.0\nLeave\nSpent"
+    commands:
+      - tapOn: "2.0\nLeave\nSpent"
+      - assertVisible: "My Leave Balance"
+      - assertVisible: "Leave History"
+      - scroll
+      - back
+      - assertVisible: "Summary"
+- runFlow: 
+    when:
+      visible: "0.0\nVisit\nTaken"
+    commands:  
+      - tapOn: "0.0\nVisit\nTaken"
+      - assertVisible: "My Visit Applications"
+      - tapOn:
+          point: "90%,14%"
+      - waitForAnimationToEnd:
+           timeout: 5000
+      - tapOn:
+          point: "50%,18%"
+      - assertVisible: "Update Visit Application"
+      - scroll
+      - back
+      - back
+      - assertVisible: "Summary"
+- runFlow:
+    when:
+      visible: "4\nNew\nNotices"
+    commands:
+      - tapOn: "4\nNew\nNotices"
+      - assertVisible: "Notice Board"
+      - tapOn:
+           point: "50%,17%"
+      - assertVisible: "Download"
+      - back
+      - back
+      - assertVisible: "Summary"
+
+
