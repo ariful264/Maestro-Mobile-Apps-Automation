@@ -1,0 +1,57 @@
+appId: com.vivacomsolutions.pihr.client
+---
+- runFlow:
+    when:
+      notVisible: "Summary"
+    commands:
+      - launchApp
+      - waitForAnimationToEnd:
+          timeout: 10000
+
+- runFlow:
+    when:
+      visible: "Summary"
+    commands:
+      - tapOn: "Notice"
+      - assertVisible: "Notice Board"
+      - tapOn:
+          point: "89%,89%"
+      - assertVisible: "New Notice"
+      - tapOn: "Title"
+      - inputText: "Notice Created by Maestro Automation"
+      - tapOn: "Description"
+      - inputText: >
+          This is to notify all employees about the upcoming maintenance
+          activity scheduled for this weekend.
+          Please be advised to save your work and log off before leaving on Friday.
+      - tapOn: "Select"
+      - tapOn: "OK"
+      # Expire date not mandatory
+      # - tapOn: "Select"
+      # - tapOn: "OK"
+      - tapOn: "Select Wing"
+      - tapOn: "Vivasoft Limited"
+      - tapOn: "Select Branch"
+      - tapOn: "Banani"
+      - scroll
+      - tapOn: "Select Department"
+      - scroll
+      - scroll
+      - tapOn: "SQA"
+      - tapOn: "Search by name or Code"
+      - inputText: "261"
+      - hideKeyboard
+      - tapOn: "Md. Ariful Islam"
+      - scroll
+      - tapOn:  "Attach Your File 
+        Maximum file size: 300 KB"
+      - waitForAnimationToEnd:
+          timeout: 5000
+      - tapOn: "Files"
+      - tapOn:
+          id: "com.google.android.documentsui:id/icon_thumb"
+          index: 0
+      - tapOn: "Publish"
+      - assertVisible: "Notice saved successfully!"
+      - back
+      - assertVisible: "Notice"
