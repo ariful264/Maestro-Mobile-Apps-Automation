@@ -1,0 +1,24 @@
+appId: com.vivacomsolutions.pihr.client
+---
+- runFlow:
+    when:
+      notVisible: "Attendance\nTab 2 of 5"
+    commands:
+      - launchApp
+      - waitForAnimationToEnd:
+         timeout: 10000
+
+- runFlow:
+    when:
+      visible: "Attendance\nTab 2 of 5"
+    commands:
+      - tapOn: "Attendance\nTab 2 of 5"
+      - assertVisible: "Subordinate's Weekly Summary"
+      - tapOn: "View Attendance"
+      - assertVisible: "View Attendance (Subordinates)"
+      - swipe:
+          start: 50%,10%
+          end: 50%,90%
+    
+      - back
+      - assertVisible: "Attendance"

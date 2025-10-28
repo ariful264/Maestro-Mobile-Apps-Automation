@@ -111,7 +111,17 @@ flows=(
   "Claim/view_claim.yaml"
   "Claim/delete_claim.yaml"
   "Directory/directory.yaml"
+  "Notice/create_new_notice.yaml"
+  "view_notice.yaml"
   "Assets/assets.yaml"
+  "Attendance/attendance_view.yaml"
+  "Attendance/recon_application_view.yaml"
+  "Attendance/subordinate_view.yaml"
+  "Attendance/recon_approval.yaml"
+  "face_registration.yaml"
+  "giveintime_face_att.yaml"
+  "giveouttime_face_att.yaml"
+  "employee_monitoring.yaml"
   "Auth/Logout.yaml"
 )
 

@@ -1,0 +1,36 @@
+appId: com.vivacomsolutions.pihr.client
+---
+- runFlow:
+    when:
+      notVisible: "Attendance\nTab 2 of 5"
+    commands:
+      - launchApp
+      - waitForAnimationToEnd:
+          timeout: 10000
+- runFlow:
+    when:
+      visible: "Attendance\nTab 2 of 5"
+    commands:
+      - tapOn: "Attendance\nTab 2 of 5"
+      - assertVisible: "Recon. Approval"
+      - tapOn: "Recon. Approval"
+      - waitForAnimationToEnd:
+          timeout: 2000
+      - waitForAnimationToEnd:
+          timeout: 1000
+      # Tap first pending card (top position)
+      - tapOn:
+          point: "50%, 28%"
+      - waitForAnimationToEnd:
+          timeout: 1500
+      - assertVisible: "Approve"
+      - tapOn: "Approve"
+      - assertVisible: "Approved reconciliation application"
+      - tapOn:
+          point: "50%, 28%"
+      - waitForAnimationToEnd:
+          timeout: 1500
+      - assertVisible: "Reject"
+      - tapOn: "Reject"
+      - assertVisible: "Rejected reconciliation application"
+      - back
