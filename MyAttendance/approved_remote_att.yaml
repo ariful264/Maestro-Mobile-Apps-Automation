@@ -1,0 +1,42 @@
+appId: com.vivacomsolutions.pihr.client
+---
+- runFlow:
+    when:
+      notVisible: "Attendance\nTab 2 of 5"
+    commands:
+      - launchApp
+      - waitForAnimationToEnd:
+          timeout: 10000
+
+- runFlow:
+    when:
+      visible: "Attendance\nTab 2 of 5"
+    commands:
+      - tapOn: "Attendance\nTab 2 of 5"
+      - assertVisible: "Subordinate's Weekly Summary"
+      - tapOn: "Remote Att. Approval"
+      - assertVisible: "Remote Att. Approval"
+      - scrollUntilVisible:
+         element: "Pending"
+         timeout: 20000   # optional (max time to scroll before giving up)
+     
+
+    #   # 👇 Scroll manually instead of scrollUntilVisible
+    #   - swipe:
+    #       start: 50%,80%
+    #       end: 50%,30%
+    #   - waitForAnimationToEnd:
+    #       timeout: 2000
+
+    #   # 👇 Detect and tap by image (Pending badge)
+    #   - tapOn:
+    #       id: "pending_badge.png"
+
+      - waitForAnimationToEnd:
+          timeout: 2000
+      - tapOn:
+          point: "88%,64%"
+      - assertVisible: "Remote Att. Details"
+      - tapOn: "Approve"
+      - assertVisible: "Approved remote attendance"
+      - back

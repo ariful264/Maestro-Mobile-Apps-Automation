@@ -1,0 +1,47 @@
+appId: com.vivacomsolutions.pihr.client
+---
+- runFlow:
+    when:
+      notVisible: "Attendance\nTab 2 of 5"
+    commands:
+      - launchApp
+      - waitForAnimationToEnd:
+          timeout: 10000
+
+- runFlow:
+    when:
+      visible: "Attendance\nTab 2 of 5"
+    commands:
+      - tapOn: "Attendance\nTab 2 of 5"
+      - assertVisible: "Subordinate's Weekly Summary"
+      - tapOn: "QR Scan / Face Att."
+      - assertVisible: "Face Attendance"
+      - tapOn: "Face Attendance"
+      - tapOn: "Tap Here To Provide Attendance"
+      - assertVisible: "Face Attendance"
+      - tapOn:
+          point: "51%,89%"
+      - waitForAnimationToEnd:
+          timeout: 5000
+
+# ✅ If face matches — proceed with Out Time & Submit
+- runFlow:
+    when:
+      visible: "Out Time"
+    commands:
+      - tapOn: "Out Time"
+      - tapOn: "Submit"
+      - assertVisible: "Data updated successfully"
+      - back
+
+# ❌ If face not matched — handle gracefully
+- runFlow:
+    when:
+      visible: "Face not matched, please try again"
+    commands:
+      # - takeScreenshot: "face_not_matched"
+      # - tapOn: "OK"        # change if the app shows another button
+      - l
+      - tapOn: "back"
+      - tapOn: "back"
+      

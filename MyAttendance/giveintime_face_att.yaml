@@ -1,0 +1,52 @@
+appId: com.vivacomsolutions.pihr.client
+---
+- runFlow:
+    when:
+      notVisible: "Attendance\nTab 2 of 5"
+    commands:
+      - launchApp
+      - waitForAnimationToEnd:
+          timeout: 10000
+
+- runFlow:
+    when:
+      visible: "Attendance\nTab 2 of 5"
+    commands:
+      - tapOn: "Attendance\nTab 2 of 5"
+      - assertVisible: "Subordinate's Weekly Summary"
+      - tapOn: "QR Scan / Face Att."
+      - assertVisible: "Face Attendance"
+      - tapOn: "Face Attendance"
+      - tapOn: "Tap Here To Provide Attendance"
+      - assertVisible: "Face Attendance"
+      - waitForAnimationToEnd:
+          timeout: 5000
+      - tapOn:
+          point: "51%,89%"
+      - waitForAnimationToEnd:
+          timeout: 5000
+- runFlow:
+    when:
+      visible: "Face not matched, please try again"
+    commands:
+      - tapOn: "back"
+      - tapOn: "back"
+
+          
+    # ✅ If "In Time" doesn’t already exist, submit attendance
+# - runFlow:
+#     when:
+#       notVisible: "Sorry. In time already exists at 04:51 PM"
+#     commands:
+#       - tapOn: "Submit"
+#       - assertVisible: "Register Face Again"
+#       - back
+
+    # If in time already exists, handle gracefully
+- runFlow:
+    when:
+      visible: "Sorry. In time already exists at 03:32 PM"
+    commands:
+      - tapOn: "Submit"
+      - assertVisible: "Data saved successfully"
+      - back
