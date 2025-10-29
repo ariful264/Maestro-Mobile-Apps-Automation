@@ -1,0 +1,33 @@
+appId: com.vivacomsolutions.pihr.client
+---
+- runFlow:
+    when:
+      notVisible: "Attendance\nTab 2 of 5"
+    commands:
+      - launchApp
+      - waitForAnimationToEnd:
+          timeout: 10000
+
+- runFlow:
+    when:
+      visible: "Attendance\nTab 2 of 5"
+    commands:
+      - tapOn: "Attendance\nTab 2 of 5"
+      - assertVisible: "Subordinate's Weekly Summary"
+      - tapOn: "Remote Att. Approval"
+      - assertVisible: "Remote Att. Approval"
+
+      - waitForAnimationToEnd:
+          timeout: 2000
+      - scrollUntilVisible:
+          element: "Pending"
+          timeout: 10000
+
+      - tapOn:
+          point: "88%,27%"
+      - waitForAnimationToEnd:
+          timeout: 1000
+      - assertVisible: "Remote Att. Details"
+      - tapOn: "Reject"
+      - assertVisible: "Rejected remote attendance"
+      - back

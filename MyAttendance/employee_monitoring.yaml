@@ -1,0 +1,40 @@
+appId: com.vivacomsolutions.pihr.client
+---
+- runFlow:
+    when:
+      notVisible: "Attendance\nTab 2 of 5"
+    commands:
+      - launchApp
+      - waitForAnimationToEnd:
+          timeout: 10000
+
+- runFlow:
+    when:
+      visible: "Attendance\nTab 2 of 5"
+    commands:
+      - tapOn: "Attendance\nTab 2 of 5"
+      - assertVisible: "Subordinate's Weekly Summary"
+      - swipe:
+          start: 50%,70%
+          end: 50%,30%
+      - tapOn: "Employee\nMonitoring"
+      - assertVisible: "Monitor Employees"
+      - tapOn:
+          point: "10%,88%"
+      - assertVisible: "Tracking History"
+      - tapOn: "Zoom in"
+      - tapOn: "Search by name or Code"
+      - inputText: "040"
+      - tapOn: "Md. Ariful islam Manik"
+      - tapOn: "From Date"
+      - tapOn: "10, Friday, October 10, 2025"
+      - tapOn: "OK"
+      - tapOn: "OK"
+      - tapOn: "To Date"
+      - tapOn: "OK"
+      - tapOn: "OK"
+      - tapOn: "Apply"
+      - assertVisible: "Tracking History"
+      - back
+      - back
+
