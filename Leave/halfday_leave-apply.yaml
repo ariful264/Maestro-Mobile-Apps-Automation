@@ -1,0 +1,44 @@
+
+appId: com.vivacomsolutions.pihr.client
+---
+- runFlow:
+    when:
+      notVisible: "Leave\nTab 3 of 5"
+    commands:
+      - launchApp
+- runFlow:
+    when:
+      visible: "Leave\nTab 3 of 5"
+    commands:
+      - tapOn: "Leave\nTab 3 of 5"
+      - assertVisible: "My Leave Applications"
+      - tapOn: "My Leave Applications"
+      - tapOn:
+         point: "89%,89%"
+      - tapOn: "Select an option"
+      - assertVisible: "Annual Leave"
+      - tapOn: "Annual Leave"
+      - tapOn: "Select date"
+      - tapOn:
+         point: "86%,35%"
+      - tapOn: "10, Monday, November 10, 2025"
+      - tapOn: "OK"
+      - tapOn:
+          text: "1st half"
+          index: 0
+      - tapOn: "Select date"
+      
+      - tapOn:
+         point: "86%,35%"
+      - tapOn: "10, Monday, November 10, 2025"
+      - tapOn: "OK"
+      - tapOn:
+          text: "1st half"
+          index: 1
+      - tapOn:
+          point: "50%,69%"
+      - inputText: "Half day leave apply by Maestro"
+      - scroll
+      - tapOn: "Apply for Leave"
+      - assertVisible: "Saved successfully"
+      - back

@@ -1,0 +1,49 @@
+
+# This module is available if any application is pensing for approval to this user.
+appId: com.vivacomsolutions.pihr.client                         
+---
+- runFlow:
+    when:
+      notVisible: "Leave\nTab 3 of 5"
+    commands:
+      - launchApp
+
+- runFlow:
+    when:
+      visible: "Leave\nTab 3 of 5"
+    commands:
+      - tapOn: "Leave\nTab 3 of 5"
+- runFlow:
+    when:
+      visible: "Approve Applications" 
+    commands:
+      - tapOn: "Approve Applications" 
+      - assertVisible: "Leave App." 
+      - tapOn: "Visit App."
+
+- runFlow:
+    when:
+      notVisible: "No data to show"
+    commands:
+      - tapOn: "Visit App."          
+      - tapOn:
+          point: "88%,20%"
+      - tapOn:
+          point: "57%,28%"
+      - assertVisible: "Remarks"
+      - tapOn: "Remarks"
+      - waitForAnimationToEnd:
+          timeout: 2000
+      - inputText: "Visit application Rejected checked by Maestro"
+      - tapOn: "Submit"
+      - assertVisible: "Rejected visit application"
+      - back
+
+- runFlow:
+    when:
+      visible: "No data to show"
+    commands:
+      - swipe:
+          start: 50%,20%
+          end: 50%,80%
+      - back

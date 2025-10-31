@@ -1,0 +1,77 @@
+
+# If Allow reliever leave is enabled for future leave application then this code will be executed.
+
+
+appId: com.vivacomsolutions.pihr.client
+---
+- runFlow:
+    when:
+      notVisible: "Leave\nTab 3 of 5"
+    commands:
+      - launchApp
+- runFlow:
+    when:
+      visible: "Leave\nTab 3 of 5"
+    commands:
+      - tapOn: "Leave\nTab 3 of 5"
+      - assertVisible: "My Leave Applications"
+      - tapOn: "My Leave Applications"
+      - tapOn:
+         point  : "89%,89%"
+      - tapOn: "Select an option"
+      - assertVisible: "Annual Leave"
+      - tapOn: "Annual Leave"
+      - tapOn: "Select date"
+      - tapOn:
+         point: "86%,35%"
+      - tapOn: "28, Friday, November 28, 2025"
+      - tapOn: "OK"
+      - tapOn: "Select date"
+      - tapOn:
+         point: "86%,35%"
+      - tapOn: "28, Friday, November 28, 2025"
+      - tapOn: "OK"
+- runFlow:
+    when:
+      visible: "Search by name or Code"
+    commands:   
+      - tapOn: "Search by name or Code"
+      - inputText: "imran"
+      - hideKeyboard
+      - tapOn: "Golam Mostafa Imran"
+      - tapOn:
+          point: "50%,69%"
+      - inputText: "Reliever checked by Maestro"
+      - scroll        
+- runFlow:
+    when:
+      notVisible: "Attach Your File
+
+          Maximum file size: 300 KB"
+    commands:
+      - tapOn: "Apply for Leave"
+      - assertVisible: "Saved successfully"
+      - back
+      - back 
+- runFlow:
+    when:
+      visible: "Attach Your File
+
+          Maximum file size: 300 KB"
+    commands:
+      - tapOn: "Attach Your File
+
+          Maximum file size: 300 KB"
+      - waitForAnimationToEnd:
+          timeout: 5000
+      - tapOn: "Files"
+      - waitForAnimationToEnd:
+          timeout: 5000
+      - tapOn:
+          id: "com.google.android.documentsui:id/icon_thumb"
+          index: 3
+      - tapOn: "Apply for Leave"
+      - assertVisible: "Saved successfully"
+      - back
+      
+

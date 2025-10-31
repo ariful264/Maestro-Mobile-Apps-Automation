@@ -1,0 +1,50 @@
+
+appId: com.vivacomsolutions.pihr.client
+---
+- runFlow:
+    when:
+      notVisible: "Leave\nTab 3 of 5"
+    commands:
+      - launchApp
+- runFlow:
+    when:
+      visible: "Leave\nTab 3 of 5"
+    commands:
+      - tapOn: "Leave\nTab 3 of 5"
+      - assertVisible: "My Leave Applications"
+      - tapOn: "My Leave Applications"
+      - tapOn:
+         point: "89%,89%"
+      - tapOn: "Select an option"
+      - assertVisible: "Annual Leave"
+      - tapOn: "Annual Leave"
+      - tapOn: "Select date"
+      - tapOn:
+         point: "86%,35%"
+      - tapOn: "20, Thursday, November 20, 2025"
+      - tapOn: "OK"
+      - tapOn: "Select date"
+      - tapOn:
+         point: "86%,35%"
+      - tapOn: "27, Thursday, November 27, 2025"
+      - tapOn: "OK"
+      - tapOn:
+          point: "50%,69%"
+      - inputText: "Leave count  continuous sanction limit Checked by Maestro"
+      - scroll
+
+      - tapOn: "Attach Your File
+
+          Maximum file size: 300 KB"
+      - waitForAnimationToEnd:
+          timeout: 5000
+      - tapOn: "Files"
+      - waitForAnimationToEnd:
+          timeout: 5000
+      - tapOn:
+          id: "com.google.android.documentsui:id/icon_thumb"
+          index: 0
+      - tapOn: "Apply for Leave"
+      - assertVisible: "Leave count exceeds continuous sanction limit of this leave type"
+      - back
+      - back

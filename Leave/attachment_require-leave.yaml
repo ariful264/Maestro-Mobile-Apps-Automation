@@ -1,0 +1,74 @@
+
+appId: com.vivacomsolutions.pihr.client
+---
+- runFlow:
+    when:
+      notVisible: "Leave\nTab 3 of 5"
+    commands:
+      - launchApp
+- runFlow:
+    when:
+      visible: "Leave\nTab 3 of 5"
+    commands:
+      - tapOn: "Leave\nTab 3 of 5"
+      - assertVisible: "My Leave Applications"
+      - tapOn: "My Leave Applications"
+      - tapOn:
+         point: "89%,89%"
+      # - assertVisible: "Apply for Leave"
+      # - tapOn: "Insert Employee Code or Name"
+      # - inputText: "261
+      # - waitForAnimationToEnd:
+      #     timeout: 2000
+      # - tapOn: "Md. Ariful Islam"
+      # - tapOn: "Select an option"
+      - tapOn: "Select an option"
+      - assertVisible: "Annual Leave"
+      - tapOn: "Annual Leave"
+      - tapOn: "Select date"
+      - tapOn: "OK"
+      - tapOn: "Select date"
+      - tapOn: "OK"
+      # - waitForAnimationToEnd:
+      #      timeout: 2000
+- runFlow:
+    when:
+      notVisible: "1.0 Day"
+    commands:
+      - tapOn:
+          point: "50%,61%"
+      - inputText: "Attachment requirement puppose test"
+      - hideKeyboard
+      - tapOn: "Apply for Leave"
+      - assertVisible: "Saved successfully"
+- runFlow:
+    when:
+      visible: "1.0 Day"
+    commands:
+      - tapOn:
+          point: "50%,69%"
+      - inputText: "Attachment requirement puppose test"
+      - scroll
+
+      - tapOn: "Attach Your File
+
+          Maximum file size: 300 KB"
+      - waitForAnimationToEnd:
+          timeout: 5000
+      - tapOn: "Files"
+      - waitForAnimationToEnd:
+          timeout: 5000
+      - tapOn:
+          id: "com.google.android.documentsui:id/icon_thumb"
+          index: 0
+      - tapOn: "Apply for Leave"
+      - assertVisible: "Saved successfully"   
+      - back
+
+      
+      
+  
+
+
+  
+

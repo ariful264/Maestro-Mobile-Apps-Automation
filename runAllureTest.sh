@@ -122,6 +122,15 @@ flows=(
   "giveintime_face_att.yaml"
   "giveouttime_face_att.yaml"
   "employee_monitoring.yaml"
+  "halfday_leave-apply.yaml"
+  "leave_continuous_sacntion.yaml"
+  "attchment_require-leave.yaml"
+  "pendingone_reapply_leave.yaml"
+  "allow_check_reliever_leave.yaml"
+  "approved_leave_application.yaml"
+  "rejected_leave_application.yaml"
+  "approved_visit_application.yaml"
+  "rejected_visit_application.yaml"
   "Auth/Logout.yaml"
 )
 
