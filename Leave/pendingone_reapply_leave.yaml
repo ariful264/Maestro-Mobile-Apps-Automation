@@ -1,0 +1,65 @@
+
+# If one pending leave application exists, reapply another leave should not be allowed.
+
+appId: com.vivacomsolutions.pihr.client                         
+---
+- runFlow:
+    when:
+      notVisible: "Leave\nTab 3 of 5"
+    commands:
+      - launchApp
+- runFlow:
+    when:
+      visible: "Leave\nTab 3 of 5"
+    commands:
+      - tapOn: "Leave\nTab 3 of 5"
+      - assertVisible: "My Leave Applications"
+      - tapOn: "My Leave Applications"
+      - tapOn:
+         point: "89%,89%"
+      - tapOn: "Select an option"
+      - assertVisible: "Annual Leave"
+      - tapOn: "Annual Leave"
+      - tapOn: "Select date"
+      - tapOn: "17, Friday, October 17, 2025"
+      - tapOn: "OK"
+      - tapOn: "Select date"  
+      - tapOn: "17, Friday, October 17, 2025"
+      - tapOn: "OK"
+      - tapOn:
+          point: "50%,69%"
+      - inputText: "Checked pending one reapply leave application"
+      - scroll
+- runFlow:
+    when:
+      notVisible: "Attach Your File
+
+          Maximum file size: 300 KB"
+    commands:
+      - tapOn: "Apply for Leave"
+      - assertVisible: "Multiple application not allowed while there is a pending one"
+      - back
+      - back 
+    
+- runFlow:
+    when:
+      visible: "Attach Your File
+
+          Maximum file size: 300 KB"
+    commands:
+      - tapOn: "Attach Your File
+
+          Maximum file size: 300 KB"
+      - waitForAnimationToEnd:
+          timeout: 5000
+      - tapOn: "Files"
+      - waitForAnimationToEnd:
+          timeout: 5000
+      - tapOn:
+          id: "com.google.android.documentsui:id/icon_thumb"
+          index: 0
+      - tapOn: "Apply for Leave"
+      - assertVisible: "Multiple application not allowed while there is a pending one"
+      - back
+      - back
+
