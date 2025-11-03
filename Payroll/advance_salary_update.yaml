@@ -1,0 +1,36 @@
+appId: com.vivacomsolutions.pihr.client
+---
+- runFlow:
+    when:
+      notVisible: "Payroll\nTab 4 of 5"
+    commands:
+      - launchApp
+- runFlow:
+    when:
+      visible: "Payroll\nTab 4 of 5"
+    commands:
+      - tapOn: "Payroll\nTab 4 of 5"
+      - assertVisible: "Advance Salary"
+      - tapOn: "Advance Salary"
+      - assertVisible: "Advance Salary"
+      - tapOn:
+          point: "84%,21%"
+      - eraseText
+      - tapOn:
+          point: "44%,27%"
+      - eraseText
+      - tapOn:
+         point: "50%,32%"
+      - eraseText
+      - inputText: "999"
+      - tapOn:
+          point: "50%,24%"
+      - eraseText
+      - inputText: "3"
+      - tapOn: "Advance salary apply by cash by maestro testing"
+      - eraseText
+      - inputText: "Advance sakary updated by maestro testing"
+      - tapOn: "Update"
+      - assertVisible: "Data updated successfully."
+      # - evalScript: console.log("Advance Salary submitted successfully")
+      - back

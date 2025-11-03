@@ -1,0 +1,35 @@
+appId: com.vivacomsolutions.pihr.client
+---
+- runFlow:
+    when:
+      notVisible: "Payroll\nTab 4 of 5"
+    commands:
+      - launchApp
+- runFlow:
+    when:
+      visible: "Payroll\nTab 4 of 5"
+    commands:
+      - tapOn: "Payroll\nTab 4 of 5"
+      - assertVisible: "Salary"
+        # Checking by Ariful salarys from vivasales acoount. 
+
+
+
+
+- runFlow:
+    when:
+      notVisible: "No data to show"
+    commands:
+      - tapOn: "35983.00\nFebruary, 2025"    
+      - assertVisible: "Salary Details"
+      - assertVisible: "Salary Summary"
+      - back
+      - back
+
+- runFlow:
+    when:
+      visible: "No data to show"
+    commands:
+      - back
+
+      # Have to work on this later coz action ID button doesn't appear.
