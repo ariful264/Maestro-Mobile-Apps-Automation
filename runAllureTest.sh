@@ -131,6 +131,10 @@ flows=(
   "rejected_leave_application.yaml"
   "approved_visit_application.yaml"
   "rejected_visit_application.yaml"
+  "salary_Check.yaml"
+  "advance_salary_bycash.yaml"
+  "advance_salary_update.yaml"
+  "advance_salary_delete.yaml"
   "Auth/Logout.yaml"
 )
 

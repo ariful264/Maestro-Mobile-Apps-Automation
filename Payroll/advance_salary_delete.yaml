@@ -1,0 +1,20 @@
+appId: com.vivacomsolutions.pihr.client
+---
+- runFlow:
+    when:
+      notVisible: "Payroll\nTab 4 of 5"
+    commands:
+      - launchApp
+- runFlow:
+    when:
+      visible: "Payroll\nTab 4 of 5"
+    commands:
+      - tapOn: "Payroll\nTab 4 of 5"
+      - assertVisible: "Advance Salary"
+      - tapOn: "Advance Salary"
+      - tapOn:
+          point: "84%,21%"
+      - tapOn:
+          point: "56%,27%"
+      - assertVisible: "Data deleted successfully."
+      - back

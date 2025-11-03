@@ -1,0 +1,36 @@
+appId: com.vivacomsolutions.pihr.client
+---
+- runFlow:
+    when:
+      notVisible: "Payroll\nTab 4 of 5"
+    commands:
+      - launchApp
+- runFlow:
+    when:
+      visible: "Payroll\nTab 4 of 5"
+    commands:
+      - tapOn: "Payroll\nTab 4 of 5"
+      - assertVisible: "Advance Salary"
+      - tapOn: "Advance Salary"
+      - tapOn:
+          point: 89%,89%
+      - assertVisible: "Advance Salary"
+      - tapOn:
+          point: "50%,33%"
+      - eraseText
+      - inputText: "500"
+      - tapOn:
+          point: "50%,31%"
+      - eraseText
+      - inputText: "5"
+      - tapOn: "Select an option"
+      - tapOn: "By Cash"
+      - tapOn: "Select Month"
+      - tapOn: "January"
+      - tapOn: "Select Year"
+      - tapOn: "2026"
+      - tapOn: "Write Your Purpose"
+      - inputText: "Advance salary apply by cash by maestro testing"
+      - tapOn: "Add"
+      - assertVisible: "Data saved successfully."
+      - back

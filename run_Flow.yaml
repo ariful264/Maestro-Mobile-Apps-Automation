@@ -40,4 +40,8 @@ appId: com.vivacomsolutions.pihr.client
 - runFlow: "Leave/rejected_leave_application.yaml"
 - runFlow: "Leave/approved_visit_application.yaml"
 - runFlow: "Leave/rejected_visit_application.yaml"
+- runFlow: "Payroll/salary_check.yaml"
+- runFlow: "Payroll/advance_salary_bycash.yaml"
+- runFlow: "Payroll/advance_salary_update.yaml"
+- runFlow: "Payroll/advance_salary_delete.yaml"
 - runFlow: "Auth/Logout.yaml"
