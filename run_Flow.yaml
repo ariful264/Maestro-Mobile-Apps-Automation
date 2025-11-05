@@ -44,4 +44,5 @@ appId: com.vivacomsolutions.pihr.client
 - runFlow: "Payroll/advance_salary_bycash.yaml"
 - runFlow: "Payroll/advance_salary_update.yaml"
 - runFlow: "Payroll/advance_salary_delete.yaml"
+- runFlow: "P.Fund/view_pf.yaml"
 - runFlow: "Auth/Logout.yaml"

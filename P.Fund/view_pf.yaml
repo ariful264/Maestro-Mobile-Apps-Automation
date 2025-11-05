@@ -1,0 +1,25 @@
+
+
+appId: com.vivacomsolutions.pihr.client
+---
+- runFlow:
+    when:
+      notVisible: "P. Fund\nTab 5 of 5"
+    commands:
+      - launchApp
+- runFlow:
+    when:
+      visible: "P. Fund\nTab 5 of 5"
+    commands:
+      - tapOn: "P. Fund\nTab 5 of 5"
+      - assertVisible: "Provident Fund"
+      - tapOn: "Year"
+      - inputText: "2025"
+      - hideKeyboard
+      - tapOn: "Show"
+      - assertVisible: "Downloaded"
+      - tapOn: "Back"
+      - stopApp
+
+
+      # Downloaded cross button  deesn't selected that why I used back button.
