@@ -1,0 +1,27 @@
+appId: com.vivacomsolutions.pihr.client
+---
+- runFlow:
+    when:
+      notVisible: "Summary"
+    commands:
+      - launchApp
+      - waitForAnimationToEnd:
+          timeout: 10000
+
+- runFlow:
+    when:
+      visible: "Summary"
+    commands:
+      - tapOn: "Notice"
+      - assertVisible: "Notice Board"
+      - swipe:
+          start: 50%, 30%
+          end: 50%, 80%
+      - waitForAnimationToEnd:
+          timeout: 2000
+      - assertVisible: "Notice Board"
+      - tapOn:
+          point: "50%,20%"
+      - back
+      - tapOn: "back"
+      - assertVisible: "Summary"
