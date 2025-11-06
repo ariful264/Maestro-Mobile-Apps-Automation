@@ -24,6 +24,7 @@ flows=(
   "Task/update_task.yaml"
   "CheckInOut/checkin.yaml"
   "CheckInOut/checkout.yaml"
+  "CheckInOut/supervision_Check.yaml"
   "Claim/new_claim.yaml"
   "Claim/update_claim.yaml"
   "Claim/view_claim.yaml"

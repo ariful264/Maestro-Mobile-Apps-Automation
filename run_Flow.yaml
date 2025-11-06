@@ -15,6 +15,7 @@ appId: com.vivacomsolutions.pihr.client
 - runFlow: "Task/update_task.yaml"
 - runFlow: "CheckInOut/checkin.yaml"
 - runFlow: "CheckInOut/checkout.yaml"
+- runFlow: "CheckInOut/supervision_Check.yaml"
 - runFlow: "Claim/new_claim.yaml"
 - runFlow: "Claim/update_claim.yaml"
 - runFlow: "Claim/view_claim.yaml"
