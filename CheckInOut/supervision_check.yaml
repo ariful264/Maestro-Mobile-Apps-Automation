@@ -1,0 +1,73 @@
+
+# This function will work when his/her subordinate give check in/check out.
+
+
+appId: com.vivacomsolutions.pihr.client
+---
+- runFlow:
+    when:
+      notVisible: "Home\nTab 1 of 5"
+    commands:
+      - launchApp
+- runFlow:
+    when:
+      visible: "Check In/Out"
+    commands: 
+      - tapOn: "Check In/Out"
+      - assertVisible: "Check In/Out"
+      - assertVisible: "Check Ins"
+
+- runFlow:
+    when:
+      visible: "Supervision"
+    commands:
+      - tapOn: "Supervision"
+
+- runFlow:
+    when:
+      notVisible: "No data to show"
+    commands:      
+      - assertVisible: "Check In/Out"
+      - swipe:
+          start: "50%,20%"
+          end: "50%,80%"
+
+      - tapOn:
+         point: "94%,6%"
+      - assertVisible: "Filter"
+      - tapOn: "Search by name or Code"
+      - inputText: "261"
+      - tapOn: "Md. Ariful Islam"
+      - tapOn: "From Date"
+      - tapOn:
+          point: "73%,35%"
+      - tapOn: "1, Wednesday, October 1, 2025"
+      - tapOn: "OK"
+      - tapOn: "OK"
+      - tapOn: "To Date"
+      - tapOn: "OK"
+      - tapOn: "OK"
+      - tapOn: "Apply"
+      - assertVisible: "No data to show"
+      - back
+
+
+- runFlow:
+    when:
+      visible: "No data to show"
+    commands:   
+      - swipe:
+         start: "50%,20%"
+         end: "50%,80%"
+      - assertVisible: "No data to show"
+      - back
+
+
+
+
+
+
+
+
+
+    
