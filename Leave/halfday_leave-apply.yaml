@@ -11,8 +11,8 @@ appId: com.vivacomsolutions.pihr.client
       visible: "Leave\nTab 3 of 5"
     commands:
       - tapOn: "Leave\nTab 3 of 5"
-      - assertVisible: "My Leave Applications"
-      - tapOn: "My Leave Applications"
+      - assertVisible: "All Leave Applications"
+      - tapOn: "All Leave Applications"
       - tapOn:
          point: "89%,89%"
       - tapOn: "Select an option"

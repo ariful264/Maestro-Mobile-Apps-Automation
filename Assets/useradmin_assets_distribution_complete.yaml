@@ -1,0 +1,48 @@
+
+                                                       # Credentals: vivasales, UserNameAdmin-> tareq
+
+appId: com.vivacomsolutions.pihr.client  
+---
+
+- runFlow: 
+    when:
+      notVisible: "Summary"
+    commands:
+      - launchApp
+
+- runFlow:
+    when:
+      visible: "Summary"
+    commands:
+      - tapOn:
+         point: "9%,7%"
+
+- runFlow:
+    when:
+      visible: "Assets"
+    commands:
+      - tapOn: "Assets"
+      - assertVisible: "Select option"
+      - tapOn: "Assets Distribution"   
+      - assertVisible: "Assets Distribution"
+      - tapOn:
+          point: "89%,14%"
+      - tapOn:
+          point: "63%,20%"      
+      # - assertVisible: "Data updated successfully"    
+      - assertVisible: "Assets Distribution"
+      - back
+
+
+- runFlow:
+    when:
+      notVisible: "Notice"
+    commands:
+      - tapOn:
+           point: "71%,19%"
+      - assertVisible: "Summary"
+
+
+
+
+
