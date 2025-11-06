@@ -31,6 +31,23 @@ appId: com.vivacomsolutions.pihr.client
       - tapOn: "Submit"
       - assertVisible: "Requested"
       - tapOn: "Requisition"
+      
+
+      # When visible Requisition, have to use logic but this momoment cannot selected action ID buton for approved & rejected.
+
+
+
+- runFlow:
+    when:
+      visible: "No data to show"
+    commands:
+      - tapOn: "Back"
+      - assertVisible: "Assets"
+
+- runFlow:
+    when:
+      notVisible: "No data to show"
+    commands:   
       - tapOn: "Back"
       - assertVisible: "Assets"
 
