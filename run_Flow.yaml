@@ -6,24 +6,37 @@ appId: com.vivacomsolutions.pihr.client
 - runFlow: "Auth/Empty_Login.yaml"
 - runFlow: "Auth/Invalid_Login.yaml"
 - runFlow: "Auth/Login.yaml"
+
 - runFlow: "In_Out/intime.yaml"
 - runFlow: "In_Out/outtime.yaml"
+
 - runFlow: "BreakTime/breaktime.yaml"
+
 - runFlow: "Task/new_task.yaml"
 - runFlow: "Task/status_change.yaml"
 - runFlow: "Task/view_task.yaml"
 - runFlow: "Task/update_task.yaml"
+
 - runFlow: "CheckInOut/checkin.yaml"
 - runFlow: "CheckInOut/checkout.yaml"
 - runFlow: "CheckInOut/supervision_Check.yaml"
+
 - runFlow: "Claim/new_claim.yaml"
 - runFlow: "Claim/update_claim.yaml"
 - runFlow: "Claim/view_claim.yaml"
 - runFlow: "Claim/delete_claim.yaml"
+
 - runFlow: "Directory/directory.yaml"
+
 - runFlow: "Notice/create_new_notice.yaml"
 - runFlow: "Notice/view_notice.yaml"
+
 - runFlow: "Assets/assets.yaml"
+- runFlow: "Assets/useradmin_assets_distribution_create.yaml"
+- runFlow: "Assets/useradmin_assets_distribution_update.yaml"
+- runFlow: "Assets/useradmin_assets_distribution_complete.yaml"
+- runFlow: "Assets/useradmin_assets_distribution_delete.yaml"
+
 - runFlow: "Attendance/attendance_view.yaml"
 - runFlow: "Attendance/recon_application_view.yaml"
 - runFlow: "Attendance/subordinate_view.yaml"
@@ -32,6 +45,7 @@ appId: com.vivacomsolutions.pihr.client
 - runFlow: "Attendance/giveintime_face_att.yaml"
 - runFlow: "Attendance/giveouttime_face_att.yaml"
 - runFlow: "Attendance/employee_monitoring.yaml"
+
 - runFlow: "Leave/attachment_require-leave.yaml"
 - runFlow: "Leave/leave_continuous_sacntion.yaml"
 - runFlow: "Leave/halfday_leave-apply.yaml"
@@ -41,9 +55,12 @@ appId: com.vivacomsolutions.pihr.client
 - runFlow: "Leave/rejected_leave_application.yaml"
 - runFlow: "Leave/approved_visit_application.yaml"
 - runFlow: "Leave/rejected_visit_application.yaml"
+
 - runFlow: "Payroll/salary_check.yaml"
 - runFlow: "Payroll/advance_salary_bycash.yaml"
 - runFlow: "Payroll/advance_salary_update.yaml"
 - runFlow: "Payroll/advance_salary_delete.yaml"
+
 - runFlow: "P.Fund/view_pf.yaml"
+
 - runFlow: "Auth/Logout.yaml"

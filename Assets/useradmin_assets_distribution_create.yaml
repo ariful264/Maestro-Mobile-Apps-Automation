@@ -1,0 +1,62 @@
+
+                                                       # Credentals: vivasales, AdminUserName-> tareq
+
+appId: com.vivacomsolutions.pihr.client  
+---
+
+- runFlow: 
+    when:
+      notVisible: "Summary"
+    commands:
+      - launchApp
+
+- runFlow:
+    when:
+      visible: "Summary"
+    commands:
+      - tapOn:
+         point: "9%,7%"
+
+- runFlow:
+    when:
+      notVisible: "Assets"
+    commands:
+      - tapOn:
+           point: "71%,19%"
+      - assertVisible: "Summary"
+    
+
+- runFlow:
+    when:
+      visible: "My Profile"
+    commands:
+      - tapOn: "Assets"
+      - assertVisible: "Select option"
+      - tapOn: "Assets Distribution"
+      # - assertVisible: "Asset Distribution"    
+      - tapOn:
+          point: "88%,89%" 
+      - assertVisible: "Asset Distribution"
+      - tapOn: "Select an option"
+      - waitForAnimationToEnd:
+          timeout: 8000      
+      - tapOn: "QA  Asset - [QA]"
+
+      - tapOn: "Search by name or Code"
+      - inputText: "261"
+      - tapOn: "Md. Ariful Islam"
+      - tapOn:
+          text: "Select"
+          index: 0
+      - tapOn: "OK"
+      - tapOn: "OK" 
+      - tapOn:
+          text: "Select" 
+      - tapOn: "30, Sunday, November 30, 2025" 
+      - tapOn: "OK"
+      - tapOn: "OK"
+      - tapOn: "Add"
+      # - assertVisible: "Data saved successfully"
+      - assertVisible: "Assets Distribution"
+      - back
+
