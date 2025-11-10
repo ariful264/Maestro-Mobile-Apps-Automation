@@ -47,6 +47,12 @@ flows=(
   "Assets/useradmin_assets_distribution_complete.yaml"
   "Assets/useradmin_assets_distribution_delete.yaml"
 
+  "MyProfile/check_myprofile.yaml"
+  "Myprofile/profile_pic_upload_byfiles.yaml"
+  "Myprofile/profile_pic_upload_bycamera.yaml"
+
+  "ChangePassword/create_new_password.yaml"
+
   "Attendance/attendance_view.yaml"
   "Attendance/recon_application_view.yaml"
   "Attendance/subordinate_view.yaml"
@@ -55,6 +61,8 @@ flows=(
   "Attendance/giveintime_face_att.yaml"
   "Attendance/giveouttime_face_att.yaml"
   "Attendance/employee_monitoring.yaml"
+
+  "AttendanceRemainder/attendace_remainder_create.yaml"
 
   "Leave/halfday_leave-apply.yaml"
   "Leave/leave_continuous_sacntion.yaml"

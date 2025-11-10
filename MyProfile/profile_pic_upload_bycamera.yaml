@@ -1,0 +1,44 @@
+appId: com.vivacomsolutions.pihr.client  
+---
+
+- runFlow: 
+    when:
+      notVisible: "Summary"
+    commands:
+      - launchApp
+
+- runFlow:
+    when:
+      visible: "Summary"
+    commands:
+      - tapOn:
+         point: "9%,7%"
+
+- runFlow: 
+    when:
+      visible: "My Profile"
+    commands: 
+      - tapOn: "My Profile"
+      - tapOn:
+         point: "29%,22%"
+      - tapOn: "Camera"
+      - waitForAnimationToEnd:
+          timeout: 3000
+      - tapOn:
+         point: "81%,89%"
+      - waitForAnimationToEnd:
+          timeout: 3000
+      - tapOn:
+         point: "50%,89%"
+
+      - tapOn:
+         point: "74%,90%"
+
+      - tapOn: "Crop"
+ 
+
+      # - takeScreenshot: profile_image_toast.png
+    
+      # - assertVisible: "Your profile image update request is waiting for approval."
+
+      - back
