@@ -28,7 +28,7 @@ appId: com.vivacomsolutions.pihr.client
       - tapOn:
           point: "89%,14%"
       - tapOn:
-          point: "63%,20%"      
+          point: "63%,20%"    
       # - assertVisible: "Data updated successfully"    
       - assertVisible: "Assets Distribution"
       - back

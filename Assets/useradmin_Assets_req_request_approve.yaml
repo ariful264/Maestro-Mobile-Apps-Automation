@@ -1,0 +1,42 @@
+                                                       # Credentals: vivasales, AdminUserName-> tareq
+
+                                                        # Have to work coz action button does not selected.
+
+
+appId: com.vivacomsolutions.pihr.client  
+---
+
+- runFlow: 
+    when:
+      notVisible: "Summary"
+    commands:
+      - launchApp
+
+- runFlow:
+    when:
+      visible: "Summary"
+    commands:
+      - tapOn:
+         point: "9%,7%"
+
+- runFlow:
+    when:
+      notVisible: "Assets"
+    commands:
+      - tapOn:
+           point: "71%,19%"
+      - assertVisible: "Summary"
+    
+
+- runFlow:
+    when:
+      visible: "My Profile"
+    commands:
+      - tapOn: "Assets"
+      - assertVisible: "Select option"
+      - tapOn: "Assets Req. Requests"
+      - assertVisible: "Assets Req. Requests"
+
+
+
+    

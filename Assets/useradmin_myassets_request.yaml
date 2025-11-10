@@ -1,0 +1,61 @@
+                                                       # Credentals: vivasales, AdminUserName-> tareq
+
+                                                
+
+
+appId: com.vivacomsolutions.pihr.client  
+---
+
+- runFlow: 
+    when:
+      notVisible: "Summary"
+    commands:
+      - launchApp
+
+- runFlow:
+    when:
+      visible: "Summary"
+    commands:
+      - tapOn:
+         point: "9%,7%"
+
+- runFlow:
+    when:
+      notVisible: "Assets"
+    commands:
+      - tapOn:
+           point: "71%,19%"
+      - assertVisible: "Summary"
+    
+
+- runFlow:
+    when:
+      visible: "My Profile"
+    commands:
+      - tapOn: "Assets"
+      - assertVisible: "Select option"
+      - tapOn: "My Asset Requests"
+      - assertVisible: "My Asset Requests"
+      - tapOn:
+          point: "89%,89%"
+      - assertVisible: "Asset Request"
+      - tapOn: "Select"
+      - tapOn: "OK"
+      - tapOn: "OK"
+      - tapOn: "Select"
+      - tapOn: "30, Sunday, November 30, 2025"
+      - tapOn: "OK"
+      - tapOn: "OK"
+      - tapOn: "Select Asset Category"
+      - tapOn: "Computer Accessories"
+      - tapOn: "Requisition"
+      - inputText: "Assets request testing by Maestro from UserAdmin"
+      - hideKeyboard
+      - tapOn: "Submit"
+      - waitForAnimationToEnd:
+          timeout: 3000
+      - assertVisible: "Data saved successfully."
+      - back
+
+
+
