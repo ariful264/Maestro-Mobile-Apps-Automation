@@ -1,0 +1,62 @@
+
+appId: com.vivacomsolutions.pihr.client  
+---
+
+- runFlow: 
+    when:
+      notVisible: "Summary"
+    commands:
+      - launchApp
+
+- runFlow:
+    when:
+      visible: "Summary"
+    commands:
+      - tapOn:
+         point: "9%,7%"
+
+- runFlow:
+    when:
+      visible: "Attendance Reminder"
+    commands:
+      - tapOn: "Attendance Reminder"
+      - assertVisible: "Attendance Reminder"
+      - tapOn:
+         point: "88%,89%"
+      - tapOn:
+         point: "52%,19%"
+      - tapOn: "Friday"
+      - tapOn: "Check In Time"
+      - tapOn:
+          point: "15%,74%"
+      
+      - tapOn: "Hour"
+      - longPressOn: "Hour"
+      - eraseText
+      - inputText: "10"
+
+      - tapOn: "Minute"
+      - longPressOn: "Minute"
+      - eraseText
+      - inputText: "00"
+      - tapOn: "AM"
+      - tapOn: "OK"
+      - tapOn: "Check Out Time"
+      - tapOn:
+         point: "17%,74%"
+      - tapOn: "Hour"
+      - longPressOn: "Hour"
+      - eraseText
+      - inputText: "07"
+      - tapOn: "Minute"
+      - longPressOn: "Minute"
+      - eraseText
+      - inputText: "00"
+      - tapOn: "PM"
+      - tapOn: "OK"
+      - tapOn: "Add New Reminder"
+      - back
+
+
+
+
