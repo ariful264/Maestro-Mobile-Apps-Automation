@@ -1,0 +1,46 @@
+appId: com.vivacomsolutions.pihr.client  
+---
+
+- runFlow: 
+    when:
+      notVisible: "Summary"
+    commands:
+      - launchApp
+
+- runFlow:
+    when:
+      visible: "Summary"
+    commands:
+      - tapOn:
+         point: "9%,7%"
+
+- runFlow: 
+    when:
+      visible: "My Profile"
+    commands: 
+      - tapOn: "My Profile"
+      # Check Personal information
+
+      - assertVisible: "Personal"
+
+      # Check Official information 
+      - tapOn:
+          point: "50%,37%"
+
+      # Check Others information     
+      
+      - tapOn:
+         point: "81%,37%"
+      # Check Calling  Functionality
+      - tapOn:
+         point: "74%,22%"
+
+      - back
+      - back
+
+      # Check Email  Functionality
+      - tapOn:
+          point: "89%,22%"
+      - back
+      - back
+      - back
