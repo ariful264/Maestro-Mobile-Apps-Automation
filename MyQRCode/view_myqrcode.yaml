@@ -1,0 +1,23 @@
+appId: com.vivacomsolutions.pihr.client  
+---
+
+- runFlow: 
+    when:
+      notVisible: "Summary"
+    commands:
+      - launchApp
+
+- runFlow:
+    when:
+      visible: "Summary"
+    commands:
+      - tapOn:
+         point: "9%,7%"
+
+- runFlow:
+    when:
+      visible: "My QR Code"
+    commands:
+      - tapOn: "My QR Code"
+      - assertVisible: "My QR Code"
+      - back

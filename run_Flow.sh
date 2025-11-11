@@ -47,9 +47,13 @@ flows=(
   "Assets/useradmin_assets_distribution_complete.yaml"
   "Assets/useradmin_assets_distribution_delete.yaml"
 
+  "MyQRCode/view_myqrcode.yaml"
+
   "MyProfile/check_myprofile.yaml"
   "Myprofile/profile_pic_upload_byfiles.yaml"
   "Myprofile/profile_pic_upload_bycamera.yaml"
+
+  "MyNoticeBoard/check_mynotice.yaml"
 
   "ChangePassword/create_new_password.yaml"
 
