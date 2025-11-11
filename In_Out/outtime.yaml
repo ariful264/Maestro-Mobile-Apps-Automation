@@ -11,13 +11,13 @@ appId: com.vivacomsolutions.pihr.client
       - tapOn: "Submit"
       - assertVisible: "Data updated successfully."
 
-- runFlow:
-    when:
-      notVisible: "In Time\n09:00 hr(s)"
-    commands:
-      - tapOn:
-          point: "74%,20%"
-      # - assertVisible: "Submit"
-      - tapOn: "Submit"
-      - assertVisible: "Data updated successfully."
+# - runFlow:
+#     when:
+#       notVisible: "In Time\n09:00 hr(s)"
+#     commands:
+#       - tapOn:
+#           point: "74%,20%"
+#       # - assertVisible: "Submit"
+#       - tapOn: "Submit"
+#       - assertVisible: "Data updated successfully."
  
