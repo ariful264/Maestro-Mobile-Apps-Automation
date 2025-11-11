@@ -1,7 +1,7 @@
 appId: com.vivacomsolutions.pihr.client
 ---
-- waitForAnimationToEnd:
-    timeout: 16000
+# - waitForAnimationToEnd:
+#     timeout: 16000
 - runFlow:
     when:
         notVisible: "Task"
@@ -54,12 +54,19 @@ appId: com.vivacomsolutions.pihr.client
       Maximum file size: 300 KB"
     - waitForAnimationToEnd:
         timeout: 5000
-    - tapOn: "Files"
-
+    - tapOn: "Camera"
     - tapOn:
-        id: "com.google.android.go.documentsui:id/icon_mime_lg"
-        index: 0
+        point: "50%,89%"
+    - waitForAnimationToEnd:
+        timeout: 5000
+    - tapOn:
+       point: "74%,90%"
 
+    # - tapOn:
+    #     id: "com.google.android.documentsui:id/icon_mime_lg"
+    #     index: 0
+    # - waitForAnimationToEnd:
+    #     timeout: 5000
     - tapOn: "Description (optional)"
     - inputText: "Testing for task created"
     - hideKeyboard 

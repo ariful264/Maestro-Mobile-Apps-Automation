@@ -41,7 +41,6 @@ appId: com.vivacomsolutions.pihr.client
 #       - tapOn: "Submit"
 #       - assertVisible: "Register Face Again"
 #       - back
-
     # If in time already exists, handle gracefully
 - runFlow:
     when:

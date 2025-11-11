@@ -1,0 +1,72 @@
+appId: com.vivacomsolutions.pihr.client
+---
+# - waitForAnimationToEnd:
+#     timeout: 16000
+- runFlow:
+    when:
+        notVisible: "Task"
+    commands:
+      - launchApp 
+- runFlow: 
+    when:
+      visible: "Task"
+    commands:
+    - tapOn: "Task"
+
+    - assertVisible: "All"
+
+    - tapOn:
+        point: "88%,89%"
+    - assertVisible: "Create Task"
+
+    - tapOn: "Type title"
+    - inputText: "Prepare Monthly Report"
+
+    - tapOn: "Search by name or Code"
+    - inputText: "Ariful"
+    - tapOn: "Md. Ariful islam Manik"
+
+    - tapOn: "Please select task category"
+    - tapOn: "With Branch Check In And Out"
+
+    - tapOn: "Please select task status"
+    - tapOn: "Pending"
+
+    - tapOn: "Please select task priority"
+    - tapOn: "Low"
+
+    # Start Date
+    - tapOn:
+        text: "Select"
+        index: 0
+    - tapOn: "OK"
+
+    # End Date
+    - tapOn:
+        text: "Select"
+    - tapOn: "OK"
+
+    - tapOn: "Select Customer"
+    - tapOn: "Anjuman"
+    - scroll
+    - tapOn: "Attach Your File
+
+      Maximum file size: 300 KB"
+    - waitForAnimationToEnd:
+        timeout: 5000
+    - tapOn: "Files"
+
+    - tapOn:
+        id: "com.google.android.documentsui:id/icon_mime_lg"
+        index: 0
+    - waitForAnimationToEnd:
+        timeout: 5000
+    - tapOn: "Description (optional)"
+    - inputText: "Testing for task created"
+    - hideKeyboard 
+    - scroll
+
+    - tapOn: "Save Task"
+
+    - assertVisible: "All"
+    - tapOn: "back"

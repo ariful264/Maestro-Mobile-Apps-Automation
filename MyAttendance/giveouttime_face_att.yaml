@@ -41,7 +41,6 @@ appId: com.vivacomsolutions.pihr.client
     commands:
       # - takeScreenshot: "face_not_matched"
       # - tapOn: "OK"        # change if the app shows another button
-      - l
       - tapOn: "back"
       - tapOn: "back"
       

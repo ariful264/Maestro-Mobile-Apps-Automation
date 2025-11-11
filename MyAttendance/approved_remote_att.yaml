@@ -19,6 +19,11 @@ appId: com.vivacomsolutions.pihr.client
       - assertVisible: "Subordinate's Weekly Summary"
       - tapOn: "Remote Att. Approval"
       - assertVisible: "Remote Att. Approval"
+
+- runFlow:
+    when:
+      notVisible: "No data to show"
+    commands:  
       - scrollUntilVisible:
          element: "Pending"
          timeout: 20000   # optional (max time to scroll before giving up)
@@ -43,3 +48,13 @@ appId: com.vivacomsolutions.pihr.client
       - tapOn: "Approve"
       - assertVisible: "Approved remote attendance"
       - back
+
+- runFlow:
+    when:
+      visible: "No data to show"
+    commands:   
+      - swipe:
+          start: "50%,20%"
+          end: "50%,80%"
+      - back
+

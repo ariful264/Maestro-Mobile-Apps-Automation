@@ -6,58 +6,46 @@ appId: com.vivacomsolutions.pihr.client
 - runFlow: "Auth/Empty_Login.yaml"
 - runFlow: "Auth/Invalid_Login.yaml"
 - runFlow: "Auth/Login.yaml"
-
 - runFlow: "In_Out/intime.yaml"
 - runFlow: "In_Out/outtime.yaml"
-
 - runFlow: "BreakTime/breaktime.yaml"
-
-- runFlow: "Task/new_task.yaml"
+- runFlow: "Task/new_task_create_byfiles.yaml"
+- runFlow: "Task/new_task_create_bycamera.yaml"
 - runFlow: "Task/status_change.yaml"
 - runFlow: "Task/view_task.yaml"
 - runFlow: "Task/update_task.yaml"
-
 - runFlow: "CheckInOut/checkin.yaml"
 - runFlow: "CheckInOut/checkout.yaml"
 - runFlow: "CheckInOut/supervision_Check.yaml"
-
 - runFlow: "Claim/new_claim.yaml"
 - runFlow: "Claim/update_claim.yaml"
 - runFlow: "Claim/view_claim.yaml"
 - runFlow: "Claim/delete_claim.yaml"
-
 - runFlow: "Directory/directory.yaml"
-
 - runFlow: "Notice/create_new_notice.yaml"
 - runFlow: "Notice/view_notice.yaml"
-
 - runFlow: "Assets/assets.yaml"
 - runFlow: "Assets/useradmin_assets_distribution_create.yaml"
 - runFlow: "Assets/useradmin_assets_distribution_update.yaml"
 - runFlow: "Assets/useradmin_assets_distribution_complete.yaml"
 - runFlow: "Assets/useradmin_assets_distribution_delete.yaml"
-
 - runFlow: "MyQRCode/view_myqrcode.yaml"
-
 - runFlow: "MyProfile/check_myprofile.yaml"
 - runFlow: "Myprofile/profile_pic_upload_byfiles.yaml"
 - runFlow: "Myprofile/profile_pic_upload_bycamera.yaml"
-
 - runFlow: "MyNoticeBoard/check_mynotice.yaml"
-
 - runFlow: "ChangePassword/create_new_password.yaml"
-
-- runFlow: "Attendance/attendance_view.yaml"
-- runFlow: "Attendance/recon_application_view.yaml"
-- runFlow: "Attendance/subordinate_view.yaml"
-- runFlow: "Attendance/recon_approval.yaml"
-- runFlow: "Attendance/face_registration.yaml"
-- runFlow: "Attendance/giveintime_face_att.yaml"
-- runFlow: "Attendance/giveouttime_face_att.yaml"
-- runFlow: "Attendance/employee_monitoring.yaml"
-
-- runFlow: "AttendanceRemainder/attendace_remainder_create.yaml"
-
+- runFlow: "MyAttendance/attendance_view.yaml"
+- runFlow: "MyAttendance/subordinate_view.yaml"
+- runFlow: "MyAttendance/recon_application_view.yaml"
+- runFlow: "MyAttendance/recon_approval.yaml"
+- runFlow: "MyAttendance/approved_remote_att.yaml"
+- runFlow: "MyAttendance/rejected_remote_att.yaml"
+- runFlow: "MyAttendance/face_registration.yaml"
+- runFlow: "MyAttendance/giveintime_face_att.yaml"
+- runFlow: "MyAttendance/giveouttime_face_att.yaml"
+- runFlow: "MyAttendance/employee_monitoring.yaml"
+- runFlow: "AttendanceRemainder/attendance_remainder_create.yaml"
 - runFlow: "Leave/attachment_require-leave.yaml"
 - runFlow: "Leave/leave_continuous_sacntion.yaml"
 - runFlow: "Leave/halfday_leave-apply.yaml"
@@ -67,12 +55,9 @@ appId: com.vivacomsolutions.pihr.client
 - runFlow: "Leave/rejected_leave_application.yaml"
 - runFlow: "Leave/approved_visit_application.yaml"
 - runFlow: "Leave/rejected_visit_application.yaml"
-
 - runFlow: "Payroll/salary_check.yaml"
 - runFlow: "Payroll/advance_salary_bycash.yaml"
 - runFlow: "Payroll/advance_salary_update.yaml"
 - runFlow: "Payroll/advance_salary_delete.yaml"
-
 - runFlow: "P.Fund/view_pf.yaml"
-
 - runFlow: "Auth/Logout.yaml"

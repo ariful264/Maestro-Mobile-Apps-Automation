@@ -5,7 +5,7 @@ appId: com.vivacomsolutions.pihr.client
       visible: "Summary"
     commands:
       - tapOn:
-          point: "9%,10%"
+          point: "9%,7%"
       - tapOn: "Log out"
       - assertVisible: "Login"
 - runFlow:
