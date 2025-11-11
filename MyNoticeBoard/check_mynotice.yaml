@@ -1,0 +1,27 @@
+
+appId: com.vivacomsolutions.pihr.client  
+---
+
+- runFlow: 
+    when:
+      notVisible: "Summary"
+    commands:
+      - launchApp
+
+- runFlow:
+    when:
+      visible: "Summary"
+    commands:
+      - tapOn:
+         point: "9%,7%"
+
+- runFlow:
+    when:
+      visible: "My Notice Board"
+    commands:
+      - tapOn: "My Notice Board"
+      - assertVisible: "Notice Board"
+      - tapOn:
+          index: 1   # indexes start from 0
+      - back
+      - back

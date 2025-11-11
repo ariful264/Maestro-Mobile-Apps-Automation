@@ -37,9 +37,13 @@ appId: com.vivacomsolutions.pihr.client
 - runFlow: "Assets/useradmin_assets_distribution_complete.yaml"
 - runFlow: "Assets/useradmin_assets_distribution_delete.yaml"
 
+- runFlow: "MyQRCode/view_myqrcode.yaml"
+
 - runFlow: "MyProfile/check_myprofile.yaml"
 - runFlow: "Myprofile/profile_pic_upload_byfiles.yaml"
 - runFlow: "Myprofile/profile_pic_upload_bycamera.yaml"
+
+- runFlow: "MyNoticeBoard/check_mynotice.yaml"
 
 - runFlow: "ChangePassword/create_new_password.yaml"
 
